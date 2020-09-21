@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Mis Mascotas</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Especie</th>
+                        <th scope="col">Raza</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let itemMascota of listaMascotas">
+                        <td><img src="{{itemMascota.foto}}" class="foto-tabla"></td>
+                        <td>{{itemMascota.nombre}}</td>
+                        <td>{{itemMascota.especie}}</td>
+                        <td>{{itemMascota.raza}}</td>
+                        <td>{{itemMascota.edad}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.container-fluid
+{
+    background-color: #121212;
+}
+
+#correo
+{
+    height: 150px;
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+}
+
+#contacto
+{
+    height: 300px;
+}
+
+#copy
+{
+    background-color: #050404;
+    height: 62px;
+}

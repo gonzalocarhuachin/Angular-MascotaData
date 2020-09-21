@@ -1,0 +1,33 @@
+.container-fluid
+{
+    background-color: #ffffff;
+    width: 100%;
+    height: 250px;
+}
+
+.row
+{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+#titulo
+{
+    border-bottom: 1px solid #F1894C;
+}
+
+h4
+{
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+p
+{
+    text-align: center;
+    color: #8F918F;
+    font-size: 20px;
+    font-style: italic;
+}
