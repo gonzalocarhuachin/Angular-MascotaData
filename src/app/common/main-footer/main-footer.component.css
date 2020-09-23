@@ -1,6 +1,7 @@
 .container-fluid
 {
     background-color: #121212;
+    width: 100%;
 }
 
 h5
@@ -18,7 +19,8 @@ span
 
 #correo
 {
-    height: 150px;
+    height: 100%;
+    width: 100%;
     border-bottom: 1px solid hsla(0,0%,100%,.1);
     padding-top: 45px;
     padding-bottom: 45px;
@@ -33,9 +35,10 @@ span
 
 #contacto
 {
-    height: 300px;
+    height: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
+    width: 100%;
 }
 
 h6
@@ -67,7 +70,8 @@ a
 #copy
 {
     background-color: #050404;
-    height: 62px;
+    height: 100%;
+    width: 100%;
 }
 
 #copytext
