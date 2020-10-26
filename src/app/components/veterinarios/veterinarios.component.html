@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row" id="titulo">
+            <div class="col-md-12">
+                <h3>Veterinarios Recomendados</h3>
+                <p>Nuestros seleccionados para la mejor atención para tu mascota.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let itemVeterinario of listaVeterinarios">
+                <div class="card-deck">
+                    <div class="card">
+                        <img src="http://localhost/serviciomascotadata/veterinarios/{{itemVeterinario.foto}}" class="card-img-top foto" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{itemVeterinario.nombre}} {{itemVeterinario.apellido}}</h5>
+                          <p class="card-text">{{itemVeterinario.empresa}} </p>
+                          <p class="card-text" id="ubicacion">{{itemVeterinario.ciudad}} / {{itemVeterinario.pais}}</p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">Calificacion: {{itemVeterinario.calificacion}} estrellas</small>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

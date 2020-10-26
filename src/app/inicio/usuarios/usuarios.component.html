@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Nuestros Usuarios</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Pais</th>
+                        <th scope="col">Nro. Mascotas</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let itemUsuario of listaUsuarios">
+                        <td>{{itemUsuario.nombre}}</td>
+                        <td>{{itemUsuario.apellido}}</td>
+                        <td>{{itemUsuario.correo}}</td>
+                        <td>{{itemUsuario.ciudad}}</td>
+                        <td>{{itemUsuario.pais}}</td>
+                        <td>{{itemUsuario.nromascotas}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2>Recordatorios</h2>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let itemMascota of listaMascotas" (click)="seleccionarMascota(itemMascota)" [class.active]="itemMascota === mascotaEscogida">
+                        <h5>{{itemMascota.nombre}}</h5>
+                        <small>{{itemMascota.raza}}</small>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9" *ngIf="mascotaEscogida">
+                <table class="table table-bordered" MascotaX="mascotaEscogida">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Descripcion</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let itemRecordatorio of listaRecordatorios">
+                            <td>{{itemRecordatorio.idrecordatorio}}</td>
+                            <td>{{itemRecordatorio.descripcion}}</td>
+                            <td>{{itemRecordatorio.fecha}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

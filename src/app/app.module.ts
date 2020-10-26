@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,10 @@ import { MainBannerComponent } from './inicio/main-banner/main-banner.component'
 import { HomeComponent } from './inicio/home/home.component';
 import { MismascotasComponent } from './inicio/mismascotas/mismascotas.component';
 import { MensajeComponent } from './inicio/mensaje/mensaje.component';
+import { UsuariosComponent } from './inicio/usuarios/usuarios.component';
+import { VeterinariosComponent } from './components/veterinarios/veterinarios.component';
+import { RecordatoriosComponent } from './components/recordatorios/recordatorios.component';
+import { MascotasComponent } from './components/mascotas/mascotas.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +27,16 @@ import { MensajeComponent } from './inicio/mensaje/mensaje.component';
     MainBannerComponent,
     HomeComponent,
     MismascotasComponent,
-    MensajeComponent
+    MensajeComponent,
+    UsuariosComponent,
+    VeterinariosComponent,
+    RecordatoriosComponent,
+    MascotasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
