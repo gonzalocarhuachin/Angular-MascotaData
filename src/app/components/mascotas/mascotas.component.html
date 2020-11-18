@@ -1,0 +1,167 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row" id="titulo">
+            <div class="col-md-12">
+                <h1>Mis Mascotas</h1>
+            </div>
+            <div class="col-md-12">
+                <p id="descripcion">Aquí podrás administrar la información de tus mascotas.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let itemMascota of listaMascotas">
+                <div class="card-deck">
+                    <div class="card">
+                        <img src="http://localhost/serviciomascotadata/mascotas/{{itemMascota.foto}}" class="card-img-top foto" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{itemMascota.nombre}}</h5>
+                          <p class="card-text">{{itemMascota.raza}} </p>
+                          <p class="card-text">Fecha de Nacimiento: {{itemMascota.fechanacimiento}}</p>
+                          <button class="btn btn-danger"(click)="seleccionar(itemMascota)">
+                            Editar
+                          </button>
+                          <button class="btn btn-light"(click)="eliminar(itemMascota)">
+                            Eliminar
+                          </button>
+                        </div>
+                        
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="form-group">
+                    <button class="btn btn-secondary"
+                        (click)="mostrarFormularioAgregar()">
+                        Nueva Mascota
+                    </button>
+                </div>
+                <div id="formulario-agregar">
+                    <form ngNativeValidate
+                    [formGroup]="mascotasAgregarForm" (ngSubmit)="agregarMascota(mascotasAgregarForm.value)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="foto"
+                            maxlength="55" 
+                            placeholder="Foto">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="nombre"
+                            required maxlength="45" 
+                            placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="especie"
+                            required maxlength="45" 
+                            placeholder="Especie">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="raza"
+                            required maxlength="45" 
+                            placeholder="Raza">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" 
+                            formControlName="fechanacimiento" 
+                            placeholder="Fecha de Nacimiento">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="descripcion"
+                            maxlength="500" 
+                            placeholder="Descripcion">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger">
+                                Agregar
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-light"
+                                (click)="cerrarFormularioAgregar()">
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="formulario-actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        <form ngNativeValidate
+        [formGroup]="mascotasActualizarForm"
+        (ngSubmit)="actualizarMascota(mascotasActualizarForm.value)"
+        *ngIf="mascotaActualizar">
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="idmascota"
+                    readonly
+                    [(ngModel)] = "mascotaActualizar.idmascota">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="foto"
+                    maxlength="55" 
+                    placeholder="Foto"
+                    [(ngModel)] = "mascotaActualizar.foto">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="nombre"
+                    required 
+                    maxlength="45" 
+                    placeholder="Nombre"
+                    [(ngModel)] = "mascotaActualizar.nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="especie"
+                    required
+                    maxlength="45" 
+                    placeholder="Especie"
+                    [(ngModel)] = "mascotaActualizar.especie">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="raza"
+                    required 
+                    maxlength="45" 
+                    placeholder="Raza"
+                    [(ngModel)] = "mascotaActualizar.raza">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" 
+                    formControlName="fechanacimiento" 
+                    placeholder="Fecha de Nacimiento"
+                    [(ngModel)] = "mascotaActualizar.fechanacimiento">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="descripcion"
+                    maxlength="500" 
+                    placeholder="Descripcion"
+                    [(ngModel)] = "mascotaActualizar.descripcion">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-ligth" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Actualizar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -75,4 +75,20 @@ p
 .card
 {
     border: none;
+    margin-bottom: 30px;
+}
+
+.btn-danger
+{
+    background-color: #F1894C;
+}
+
+.btn
+{
+    margin-right: 5px;
+}
+
+.text-muted
+{
+    margin-right: 8px;
 }

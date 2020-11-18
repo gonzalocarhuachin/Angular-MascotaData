@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { OrderModule } from 'ngx-order-pipe';
+import { CommonModule } from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './common/main-nav/main-nav.component';
 import { MainFooterComponent } from './common/main-footer/main-footer.component';
@@ -35,8 +40,14 @@ import { MascotasComponent } from './components/mascotas/mascotas.component';
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FilterPipeModule,
+    OrderModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

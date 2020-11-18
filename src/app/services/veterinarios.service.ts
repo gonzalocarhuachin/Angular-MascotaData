@@ -22,4 +22,50 @@ export class VeterinariosService {
       })
     )
   }
+
+  veterinariosInsert(foto,nombre,apellido,telefono,empresa,ciudad,pais,calificacion){
+    const ruta = "http://localhost/serviciomascotadata/veterinarios_insert.php";
+
+    const formData: FormData = new FormData();
+    formData.append("foto",foto);
+    formData.append("nombre",nombre);
+    formData.append("apellido",apellido);
+    formData.append("telefono",telefono);
+    formData.append("empresa",empresa);
+    formData.append("ciudad",ciudad);
+    formData.append("pais",pais);
+    formData.append("calificacion",calificacion);
+
+    return this.http.post(ruta,formData).pipe(
+      map((res) => {
+        return res;
+      })
+    )
+  }
+
+  veterinariosUpdate(idveterinario,foto,nombre,apellido,telefono,empresa,ciudad,pais,calificacion){
+    const ruta = "http://localhost/serviciomascotadata/veterinarios_update.php";
+
+    const formData: FormData = new FormData();
+    formData.append("idveterinario",idveterinario);
+    formData.append("foto",foto);
+    formData.append("nombre",nombre);
+    formData.append("apellido",apellido);
+    formData.append("telefono",telefono);
+    formData.append("empresa",empresa);
+    formData.append("ciudad",ciudad);
+    formData.append("pais",pais);
+    formData.append("calificacion",calificacion)
+
+    return this.http.post(ruta,formData);
+  }
+
+  veterinariosDelete(idveterinario){
+    const ruta = "http://localhost/serviciomascotadata/veterinarios_delete.php";
+
+    const formData: FormData = new FormData();
+    formData.append("idveterinario",idveterinario);
+
+    return this.http.post(ruta,formData);
+  }
 }

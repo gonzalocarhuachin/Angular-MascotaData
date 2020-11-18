@@ -1,0 +1,83 @@
+.container-fluid
+{
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.container
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.row
+{
+    margin-bottom: 30px;
+}
+
+h1
+{
+    text-align: center;
+    font-weight: 700;
+}
+
+#titulo
+{
+    border-bottom: 1px solid #F1894C;
+    padding-bottom: 30px;
+}
+
+#descripcion
+{
+    text-align: center;
+    color: #7B807A;
+    font-size: 16px;
+}
+
+.col-md-4
+{
+    margin-bottom: 30px;
+}
+
+.card-title
+{
+    text-align: center;
+    color: #F1894C;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-text
+{
+    text-align: center;
+    font-size: 15px;
+    color: #7B807A;
+}
+
+
+.card
+{
+    border: none;
+} 
+
+.foto
+{
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+}
+
+.card-img-top
+{
+    align-self: center;
+}
+
+.btn-danger
+{
+    background-color: #F1894C;
+}
+
+.btn
+{
+    margin-right: 20px;
+}

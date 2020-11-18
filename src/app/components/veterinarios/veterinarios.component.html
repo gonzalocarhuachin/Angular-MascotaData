@@ -18,10 +18,178 @@
                         </div>
                         <div class="card-footer">
                           <small class="text-muted">Calificacion: {{itemVeterinario.calificacion}} estrellas</small>
+                          <button class="btn btn-danger"(click)="seleccionar(itemVeterinario)">
+                            Editar
+                          </button>
+                          <button class="btn btn-light"(click)="eliminar(itemVeterinario)">
+                            Eliminar
+                          </button>
                         </div>
                       </div>
+                      
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="form-group">
+                <button class="btn btn-secondary"
+                    (click)="mostrarFormularioAgregar()">
+                    Nuevo Veterinario
+                </button>
+            </div>
+            <div id="formulario-agregar">
+                <form ngNativeValidate
+                [formGroup]="veterinariosAgregarForm" (ngSubmit)="agregarVeterinario(veterinariosAgregarForm.value)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="foto"
+                        maxlength="55" 
+                        placeholder="Foto">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="nombre"
+                        required maxlength="55" 
+                        placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="apellido"
+                        required maxlength="55" 
+                        placeholder="Apellido">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="telefono"
+                        maxlength="25" 
+                        placeholder="Telefono">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="empresa"
+                        required maxlength="55" 
+                        placeholder="Empresa">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="ciudad"
+                        required maxlength="45" 
+                        placeholder="Ciudad">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="pais"
+                        required maxlength="45" 
+                        placeholder="Pais">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" 
+                        formControlName="calificacion" 
+                        required maxLength="3"
+                        placeholder="Calificacion">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                            (click)="cerrarFormularioAgregar()">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+    </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="formulario-actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        <form ngNativeValidate
+        [formGroup]="veterinariosActualizarForm"
+        (ngSubmit)="actualizarVeterinario(veterinariosActualizarForm.value)"
+        *ngIf="veterinarioActualizar">
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="idveterinario"
+                    readonly
+                    [(ngModel)] = "veterinarioActualizar.idveterinario">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="foto"
+                    maxlength="55" 
+                    placeholder="Foto"
+                    [(ngModel)] = "veterinarioActualizar.foto">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="nombre"
+                    required 
+                    maxlength="55" 
+                    placeholder="Nombre"
+                    [(ngModel)] = "veterinarioActualizar.nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="apellido"
+                    required
+                    maxlength="55" 
+                    placeholder="Apellido"
+                    [(ngModel)] = "veterinarioActualizar.apellido">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="telefono"
+                    maxlength="25" 
+                    placeholder="Telefono"
+                    [(ngModel)] = "veterinarioActualizar.telefono">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="empresa"
+                    required maxlength="55" 
+                    placeholder="Empresa"
+                    [(ngModel)] = "veterinarioActualizar.empresa">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="ciudad"
+                    required maxlength="45" 
+                    placeholder="Ciudad"
+                    [(ngModel)] = "veterinarioActualizar.ciudad">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    formControlName="pais"
+                    required maxlength="45" 
+                    placeholder="Pais"
+                    [(ngModel)] = "veterinarioActualizar.pais">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" 
+                    formControlName="calificacion"
+                    required maxlength="3" 
+                    placeholder="Calificacion"
+                    [(ngModel)] = "veterinarioActualizar.calificacion">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-ligth" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Actualizar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
