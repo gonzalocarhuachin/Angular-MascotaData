@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { OrderModule } from 'ngx-order-pipe';
 import { CommonModule } from "@angular/common";
+import {NgxPaginationModule} from 'ngx-pagination';
+import {NgxPrintModule} from 'ngx-print';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -21,6 +23,7 @@ import { UsuariosComponent } from './inicio/usuarios/usuarios.component';
 import { VeterinariosComponent } from './components/veterinarios/veterinarios.component';
 import { RecordatoriosComponent } from './components/recordatorios/recordatorios.component';
 import { MascotasComponent } from './components/mascotas/mascotas.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { MascotasComponent } from './components/mascotas/mascotas.component';
     UsuariosComponent,
     VeterinariosComponent,
     RecordatoriosComponent,
-    MascotasComponent
+    MascotasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import { MascotasComponent } from './components/mascotas/mascotas.component';
     ReactiveFormsModule,
     FilterPipeModule,
     OrderModule,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -81,3 +81,23 @@ h1
 {
     margin-right: 20px;
 }
+
+#formAgregar
+{
+    background-color: #ffffff;
+}
+
+.btn-secondary, .agregarForm
+{
+    margin-left: 35%;
+    width: 350px;
+}
+
+input
+{
+    border: 1px solid #ffffff;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}

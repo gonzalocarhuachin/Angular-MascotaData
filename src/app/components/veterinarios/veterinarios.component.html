@@ -30,14 +30,18 @@
                 </div>
             </div>
         </div>
+</div>
+</div>
+<div class="container-fluid" id="formAgregar">
+    <div class="container">
         <div class="row">
-            <div class="form-group">
+            <div class="form-group col-md-12">
                 <button class="btn btn-secondary"
                     (click)="mostrarFormularioAgregar()">
                     Nuevo Veterinario
                 </button>
             </div>
-            <div id="formulario-agregar">
+            <div id="formulario-agregar" class="col-md-12">
                 <form ngNativeValidate
                 [formGroup]="veterinariosAgregarForm" (ngSubmit)="agregarVeterinario(veterinariosAgregarForm.value)">
                     <div class="form-group">
@@ -89,19 +93,19 @@
                         placeholder="Calificacion">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-danger">
+                        <button type="submit" class="btn btn-danger agregarForm">
                             Agregar
                         </button>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-light"
+                        <button type="button" class="btn btn-dark agregarForm"
                             (click)="cerrarFormularioAgregar()">
                             Cancelar
                         </button>
                     </div>
                 </form>
             </div>
-    </div>
+        </div>
     </div>
 </div>
 

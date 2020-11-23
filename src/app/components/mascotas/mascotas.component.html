@@ -24,70 +24,73 @@
                             Eliminar
                           </button>
                         </div>
-                        
                       </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="container-fluid" id="formAgregar">
+    <div class="container">
         <div class="row">
-                <div class="form-group">
-                    <button class="btn btn-secondary"
-                        (click)="mostrarFormularioAgregar()">
-                        Nueva Mascota
-                    </button>
-                </div>
-                <div id="formulario-agregar">
-                    <form ngNativeValidate
-                    [formGroup]="mascotasAgregarForm" (ngSubmit)="agregarMascota(mascotasAgregarForm.value)">
-                        <div class="form-group">
-                            <input type="text" class="form-control" 
-                            formControlName="foto"
-                            maxlength="55" 
-                            placeholder="Foto">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" 
-                            formControlName="nombre"
-                            required maxlength="45" 
-                            placeholder="Nombre">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" 
-                            formControlName="especie"
-                            required maxlength="45" 
-                            placeholder="Especie">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" 
-                            formControlName="raza"
-                            required maxlength="45" 
-                            placeholder="Raza">
-                        </div>
-                        <div class="form-group">
-                            <input type="date" class="form-control" 
-                            formControlName="fechanacimiento" 
-                            placeholder="Fecha de Nacimiento">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" 
-                            formControlName="descripcion"
-                            maxlength="500" 
-                            placeholder="Descripcion">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-danger">
-                                Agregar
-                            </button>
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-light"
-                                (click)="cerrarFormularioAgregar()">
-                                Cancelar
-                            </button>
-                        </div>
-                    </form>
-                </div>
-        </div>
+            <div class="form-group col-md-12">
+                <button class="btn btn-secondary"
+                    (click)="mostrarFormularioAgregar()">
+                    Nueva Mascota
+                </button>
+            </div>
+            <div id="formulario-agregar" class="col-md-12">
+                <form ngNativeValidate
+                [formGroup]="mascotasAgregarForm" (ngSubmit)="agregarMascota(mascotasAgregarForm.value)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="foto"
+                        maxlength="55" 
+                        placeholder="Foto">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="nombre"
+                        required maxlength="45" 
+                        placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="especie"
+                        required maxlength="45" 
+                        placeholder="Especie">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="raza"
+                        required maxlength="45" 
+                        placeholder="Raza">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" 
+                        formControlName="fechanacimiento" 
+                        placeholder="Fecha de Nacimiento">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                        formControlName="descripcion"
+                        maxlength="500" 
+                        placeholder="Descripcion">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger agregarForm">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-dark agregarForm"
+                            (click)="cerrarFormularioAgregar()">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+    </div>
     </div>
 </div>
 
