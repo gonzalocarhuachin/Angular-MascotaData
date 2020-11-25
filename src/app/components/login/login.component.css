@@ -1,0 +1,40 @@
+.container-fluid
+{
+    width: 100%;
+    background-color: #121212;
+}
+
+.container
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #F1894C;
+}
+
+.row
+{
+    margin-bottom: 30px;
+}
+
+h2
+{
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn-danger
+{
+    background-color: #F1894C;
+    border: 1px solid #F1894C;
+}
+
+#login
+{
+    margin-top: 40px;
+}
+
+.login, .logout
+{
+    width: 100%;
+    height: 45px;
+}

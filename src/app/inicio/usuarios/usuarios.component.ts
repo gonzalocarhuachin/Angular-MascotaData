@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/entities/usuario';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { faChevronUp,faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-usuarios',
@@ -9,6 +10,15 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class UsuariosComponent implements OnInit {
   listaUsuarios: Usuario[];
+  usuariosFilter: any = { nombre: '' };
+
+  faChevronUp = faChevronUp
+  faChevronDown = faChevronDown
+
+  order: string = 'nombre';
+  reverse:boolean = false;
+
+  numeroPagina: number = 1;
 
   constructor(private usuariosService: UsuariosService) { }
 
@@ -22,6 +32,13 @@ export class UsuariosComponent implements OnInit {
         this.listaUsuarios = res;
       }
     )
+  }
+
+  setOrder(value: string){
+    if(this.order === value){
+      this.reverse = !this.reverse;
+    }
+    this.order = value;
   }
 
 }

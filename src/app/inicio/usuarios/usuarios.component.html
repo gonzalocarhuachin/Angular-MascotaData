@@ -6,20 +6,64 @@
             </div>
         </div>
         <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div class="form-group buscador">
+              <input type="text" class="form-control" 
+                  placeholder="Indique nombre del usuario a buscar"
+                  [(ngModel)]="usuariosFilter.nombre">
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <table class="table table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Ciudad</th>
-                        <th scope="col">Pais</th>
-                        <th scope="col">Nro. Mascotas</th>
+                        <th scope="col" (click)="setOrder('nombre')"
+                        [class.active]="order==='nombre'">
+                        Nombre
+                        <span [hidden]="reverse"><fa-icon [icon]="faChevronUp"></fa-icon></span>
+                        <span [hidden]="!reverse"><fa-icon [icon]="faChevronDown"></fa-icon></span>
+                        </th>
+                        <th scope="col" (click)="setOrder('apellido')"
+                        [class.active]="order==='apellido'">
+                          Apellido
+                          <span [hidden]="reverse"><fa-icon [icon]="faChevronUp"></fa-icon></span>
+                          <span [hidden]="!reverse"><fa-icon [icon]="faChevronDown"></fa-icon></span>
+                        </th>
+                        <th scope="col" (click)="setOrder('correo')"
+                        [class.active]="order==='correo'">
+                          Correo
+                          <span [hidden]="reverse"><fa-icon [icon]="faChevronUp"></fa-icon></span>
+                          <span [hidden]="!reverse"><fa-icon [icon]="faChevronDown"></fa-icon></span>
+                        </th>
+                        <th scope="col" (click)="setOrder('ciudad')"
+                        [class.active]="order==='ciudad'">
+                          Ciudad
+                          <span [hidden]="reverse"><fa-icon [icon]="faChevronUp"></fa-icon></span>
+                          <span [hidden]="!reverse"><fa-icon [icon]="faChevronDown"></fa-icon></span>
+                        </th>
+                        <th scope="col" (click)="setOrder('pais')"
+                        [class.active]="order==='pais'">
+                          Pais
+                          <span [hidden]="reverse"><fa-icon [icon]="faChevronUp"></fa-icon></span>
+                          <span [hidden]="!reverse"><fa-icon [icon]="faChevronDown"></fa-icon></span>
+                        </th>
+                        <th scope="col" (click)="setOrder('nromascotas')"
+                        [class.active]="order==='nromascotas'">
+                          Nro. Mascotas
+                          <span [hidden]="reverse"><fa-icon [icon]="faChevronUp"></fa-icon></span>
+                          <span [hidden]="!reverse"><fa-icon [icon]="faChevronDown"></fa-icon></span>
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let itemUsuario of listaUsuarios">
+                      <tr *ngFor="let itemUsuario of listaUsuarios
+                                      | filterBy: usuariosFilter 
+                                      | orderBy: order : reverse
+                                      | paginate: { itemsPerPage: 4, currentPage: numeroPagina }">
                         <td>{{itemUsuario.nombre}}</td>
                         <td>{{itemUsuario.apellido}}</td>
                         <td>{{itemUsuario.correo}}</td>
@@ -29,6 +73,9 @@
                       </tr>
                     </tbody>
                   </table>
+                  <pagination-controls (pageChange)="numeroPagina = $event"
+                  previousLabel="Anterior"
+                  nextLabel="Siguiente" class="controls"></pagination-controls>
             </div>
         </div>
     </div>

@@ -1,10 +1,33 @@
 <div class="container-fluid">
     <div class="container">
         <div class="row">
-
+            <div class="col-md-12">
+                <h2>Inicio de Sesión</h2>
+            </div>
         </div>
         <div class="row">
-            
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form ngNativeValidate [formGroup]="loginForm"
+                (ngSubmit)="verificarLogin(loginForm.value)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Usuario" 
+                        formControlName="usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Contraseña" 
+                        formControlName="clave" required>
+                    </div>
+                    <div class="form-group" id="login">
+                        <input type="submit" class="btn btn-danger login" value="Iniciar sesión">
+                    </div>                        
+                </form>    
+                <div class="form-group" id="logout">
+                    <input type="button" class="btn btn-light logout" value="Cerrar sesión"
+                    (click)="cerrarSesion()">
+                </div> 
+            </div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 </div>
